@@ -3,26 +3,33 @@
 #include <iostream>
 #include <string>
 
+using namespace std;
+
 void lc2kcType::usage() {
-    std::cout << "Usage: lc2kc [script]" << "\n";
+    cout << "Usage: ./lc2kc [filepath]" << "\n";
 }
 
-void lc2kcType::runFile(char *file){
+void lc2kcType::runFile(char *path){
     try {
-        std::cout << "Running file..." << file << "\n";
+        cout << "Running file..." << path << "\n";
+        this->run(path);
 
     }
     catch (std::string error){
-        std::cout << "Error reading input file." << "\n";
-        std::cout << "Message:" << " " << error << "\n";
+        cout << "Error reading input file." << "\n";
+        cout << "Message:" << " " << error << "\n";
     }
+}
+
+void lc2kcType::run(string source){
+    // lexer here
 }
 
 
 int main(int argc, char *argv[]) {
     lc2kcType lc2kc;
     // bool verbose = false; I'll add this another time
-    std::cout << argc << "\n";
+    cout << argc << "\n";
 
     if (argc < 1 || argc > 2){
         lc2kc.usage();
