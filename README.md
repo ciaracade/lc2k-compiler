@@ -14,6 +14,7 @@ Development Methodology:
 5. Refactor the compiler, if necessary, making sure that none of the tests are broken due to incorrect refactoring.
 6. Enlarge the subset of the language in a very small step and repeat the cycle by writing more tests and extending the compiler to meet the newly-added requirements.
 
+
 ## Resources:
 - https://craftinginterpreters.com
 - https://norasandler.com/2017/11/29/Write-a-Compiler.html

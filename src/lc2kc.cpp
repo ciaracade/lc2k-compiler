@@ -1,7 +1,9 @@
 #include "lc2kc.h"
+#include "lexer.h"
 
 #include <iostream>
 #include <string>
+#include <fstream>
 
 using namespace std;
 
@@ -12,17 +14,33 @@ void lc2kcType::usage() {
 void lc2kcType::runFile(char *path){
     try {
         cout << "Running file..." << path << "\n";
-        this->run(path);
+        string line;
+        string source;
 
+        ifstream fileRead(path);
+
+        if (!fileRead.is_open()){
+            throw "File did not open";
+        }
+
+        while (getline(fileRead, line)){
+            source += line;
+        }
+
+        this->run(&source);
+
+        fileRead.close();
     }
     catch (std::string error){
-        cout << "Error reading input file." << "\n";
+        cout << "Error running program." << "\n";
         cout << "Message:" << " " << error << "\n";
     }
 }
 
-void lc2kcType::run(string source){
-    // lexer here
+void lc2kcType::run(string *source){
+    lexerType lexer(source);
+
+    cout << lexer;
 }
 
 
