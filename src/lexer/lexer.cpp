@@ -1,20 +1,17 @@
 #include "lexer.h"
+#include "token.h"
 
 #include <string>
 #include <iostream>
 
-lexerType::lexerType(string *source){
+lexerType::lexerType(ifstream * /* fileStream */){
 
-}
+};
 
-ostream& operator<<(ostream& os, const token& token) {
-    os << "Token";
-    return os;
-}
 
 ostream& operator<<(ostream& os, const lexerType& lt) {
-    for(int i = 0; i< lt.tokens.size(); i++){
+    for(size_t i = 0; i < lt.tokens.size(); i++){
         os << lt.tokens[i] << "\n";
     }
     return os;
-}
+};

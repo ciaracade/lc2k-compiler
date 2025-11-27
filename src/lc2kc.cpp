@@ -14,22 +14,16 @@ void lc2kcType::usage() {
 void lc2kcType::runFile(char *path){
     try {
         cout << "Running file..." << path << "\n";
-        string line;
-        string source;
 
-        ifstream fileRead(path);
+        ifstream fileStream(path);
 
-        if (!fileRead.is_open()){
+        if (!fileStream.is_open()) {
             throw "File did not open";
-        }
+            }
 
-        while (getline(fileRead, line)){
-            source += line;
-        }
+        this->run(&fileStream);
 
-        this->run(&source);
-
-        fileRead.close();
+        fileStream.close();
     }
     catch (std::string error){
         cout << "Error running program." << "\n";
@@ -37,8 +31,8 @@ void lc2kcType::runFile(char *path){
     }
 }
 
-void lc2kcType::run(string *source){
-    lexerType lexer(source);
+void lc2kcType::run(ifstream* fileStream) {
+    lexerType lexer(fileStream);
 
     cout << lexer;
 }

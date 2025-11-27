@@ -9,8 +9,8 @@ class lc2kcType {
 
     void runFile(char *path);
 
-    void run(string *source);
-    
+    void run(ifstream* fileStream);
+
     private:
 
 };
