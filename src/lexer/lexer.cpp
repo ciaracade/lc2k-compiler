@@ -1,11 +1,13 @@
 #include "lexer.h"
 #include "token.h"
+#include "scanner.h"
 
 #include <string>
 #include <iostream>
 
-lexerType::lexerType(ifstream * /* fileStream */){
-
+lexerType::lexerType(ifstream * fileRead){
+    // add scanner here
+    scannerType scanner(fileRead);
 };
 
 

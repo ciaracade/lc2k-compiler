@@ -15,7 +15,8 @@ class scannerType {
     private:
         int start = 0;
         int current = 0;
-        int line = 1;
+        int line = 1; 
+        // Think of these vars like right and left for sliding window
 
         bool isAtEnd();
         char advance();

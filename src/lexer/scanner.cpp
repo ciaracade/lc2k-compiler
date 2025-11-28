@@ -47,4 +47,5 @@ void scannerType::addToken(tokenType type) {
 void scannerType::addToken(tokenType type, Literal literal) {
     string text = source.substr(start, current - start);
     tokens.push_back(token(type, text, literal, line));
+    cout << "Token added: " << text << "\n";
 }
