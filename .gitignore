@@ -51,3 +51,6 @@ Makefile
 
 # Dependencies
 *.d
+
+# others
+.vscode
