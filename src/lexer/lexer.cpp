@@ -20,8 +20,9 @@ lexerType::lexerType(std::ifstream &fileRead){
 
 
 std::ostream& operator<<(std::ostream& os, const lexerType& lt) {
+    cout << "Tokens:" << "\n";
     for(size_t i = 0; i < lt.tokens.size(); i++){
-        os << lt.tokens[i] << "\n";
+        os << "- " << lt.tokens[i] << "\n";
     }
     return os;
 };

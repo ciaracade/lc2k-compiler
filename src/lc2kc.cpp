@@ -13,7 +13,7 @@ void lc2kcType::usage() {
 
 void lc2kcType::runFile(char *path){
     try {
-        cout << "Running file..." << path << "\n";
+        cout << "Running file: " << path << "\n";
 
         std::ifstream fileStream(path);
 
@@ -41,7 +41,6 @@ void lc2kcType::run(std::ifstream& fileStream) {
 int main(int argc, char *argv[]) {
     lc2kcType lc2kc;
     // bool verbose = false; I'll add this another time
-    cout << argc << "\n";
 
     if (argc < 1 || argc > 2){
         lc2kc.usage();
