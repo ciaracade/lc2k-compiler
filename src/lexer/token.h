@@ -5,8 +5,6 @@
 #include <ostream>
 #include <variant>
 
-using namespace std;
-
 using Literal = std::variant<std::monostate, std::string, double>;
 
 enum tokenType {
@@ -23,27 +21,28 @@ enum tokenType {
     STRING,
     NUMBER,
 
-    // Keywords
     INT,
     RETURN,
 
     END_OF_FILE
 };
 
+const char* tokenTypeToString(tokenType type);
+
 class token {
 public:
     tokenType type;
-    string lexeme;
+    std::string lexeme;
     Literal literal;
     int line;
 
-    token(tokenType type, string lexeme, Literal literal, int line);
+    token(tokenType type, std::string lexeme, Literal literal, int line);
 
-    string toString() const;
+    std::string toString() const;
 
 private:
 };
 
-ostream& operator<<(ostream& os, const token& token);
+std::ostream& operator<<(std::ostream& os, const token& token);
 
 #endif

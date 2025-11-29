@@ -1,7 +1,6 @@
 #include <iostream>
 #include <string>
-
-using namespace std;
+#include <fstream>
 
 class lc2kcType {
     public:
@@ -9,7 +8,7 @@ class lc2kcType {
 
     void runFile(char *path);
 
-    void run(ifstream* fileStream);
+    void run(std::ifstream& fileStream);
 
     private:
 

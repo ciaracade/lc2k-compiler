@@ -15,13 +15,13 @@ void lc2kcType::runFile(char *path){
     try {
         cout << "Running file..." << path << "\n";
 
-        ifstream fileStream(path);
+        std::ifstream fileStream(path);
 
         if (!fileStream.is_open()) {
             throw std::string("File did not open");
             }
 
-        this->run(&fileStream);
+        this->run(fileStream);
 
         fileStream.close();
     }
@@ -31,8 +31,8 @@ void lc2kcType::runFile(char *path){
     }
 }
 
-void lc2kcType::run(ifstream* fileStream) {
-    lexerType lexer(*fileStream);
+void lc2kcType::run(std::ifstream& fileStream) {
+    lexerType lexer(fileStream);
 
     cout << lexer;
 }

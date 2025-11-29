@@ -2,6 +2,27 @@
 #include <sstream>
 #include <variant>
 
+using namespace std;
+
+const char* tokenTypeToString(tokenType type) {
+    switch(type) {
+        case OPEN_BRACE: return "OPEN_BRACE";
+        case CLOSE_BRACE: return "CLOSE_BRACE";
+        case OPEN_PARENTHESIS: return "OPEN_PARENTHESIS";
+        case CLOSE_PARENTHESIS: return "CLOSE_PARENTHESIS";
+        case SEMICOLON: return "SEMICOLON";
+        case EQUAL: return "EQUAL";
+        case PLUS: return "PLUS";
+        case IDENTIFIER: return "IDENTIFIER";
+        case STRING: return "STRING";
+        case NUMBER: return "NUMBER";
+        case INT: return "INT";
+        case RETURN: return "RETURN";
+        case END_OF_FILE: return "END_OF_FILE";
+        default: return "UNKNOWN";
+    }
+}
+
 token::token(tokenType type, string lexeme, Literal literal, int line) {
     this->type = type;
     this->lexeme = lexeme;
@@ -11,7 +32,7 @@ token::token(tokenType type, string lexeme, Literal literal, int line) {
 
 string token::toString() const {
     ostringstream oss;
-    oss << to_string(type) << " " << lexeme << " ";
+    oss << tokenTypeToString(type) << " " << lexeme << " ";
 
     // Convert variant to string
     std::visit([&oss](auto&& arg) {

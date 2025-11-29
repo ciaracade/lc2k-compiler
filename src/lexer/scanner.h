@@ -1,3 +1,6 @@
+#ifndef SCANNER_H
+#define SCANNER_H
+
 #include <string>
 #include "token.h"
 #include <vector>
@@ -5,13 +8,13 @@
 
 class scannerType {
     public:
-        string source;
-        vector<token> tokens;
+        std::string source;
+        std::vector<token> tokens;
         static const std::unordered_map<std::string, tokenType> keywords;
 
-        scannerType(string source);
+        scannerType(std::string source);
 
-        vector<token> scanTokens();
+        std::vector<token> scanTokens();
         void scanToken();
 
     private:
@@ -31,3 +34,4 @@ class scannerType {
         void addToken(tokenType type, Literal literal);
 };
 
+#endif

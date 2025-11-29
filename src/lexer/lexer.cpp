@@ -6,9 +6,11 @@
 #include <iostream>
 #include <fstream>
 
-lexerType::lexerType(ifstream &fileRead){
-    string source = "";
-    string line = "";
+using namespace std;
+
+lexerType::lexerType(std::ifstream &fileRead){
+    std::string source = "";
+    std::string line = "";
     while (getline(fileRead, line)) {
         source += line + "\n";
     }
@@ -17,7 +19,7 @@ lexerType::lexerType(ifstream &fileRead){
 };
 
 
-ostream& operator<<(ostream& os, const lexerType& lt) {
+std::ostream& operator<<(std::ostream& os, const lexerType& lt) {
     for(size_t i = 0; i < lt.tokens.size(); i++){
         os << lt.tokens[i] << "\n";
     }

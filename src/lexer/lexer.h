@@ -2,18 +2,17 @@
 #include <string>
 #include <variant>
 #include <vector>
+#include <fstream>
 #include "token.h"
-
-using namespace std;
 
 class lexerType {
     public:
-    vector<token> tokens;
+    std::vector<token> tokens;
 
-    lexerType(ifstream &fileStream);
+    lexerType(std::ifstream &fileStream);
 
 
     private:
 };
 
-ostream& operator<<(ostream& os, const lexerType& lt);
+std::ostream& operator<<(std::ostream& os, const lexerType& lt);
