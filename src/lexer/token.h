@@ -16,11 +16,15 @@ enum tokenType {
     CLOSE_PARENTHESIS,
 
     SEMICOLON,
+    EQUAL,
+    PLUS,
 
     IDENTIFIER,
     STRING,
-    INT,
+    NUMBER,
 
+    // Keywords
+    INT,
     RETURN,
 
     END_OF_FILE

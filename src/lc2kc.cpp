@@ -1,11 +1,11 @@
 #include "lc2kc.h"
-#include "lexer.h"
+#include "lexer/lexer.h"
 
+#include <fstream>
 #include <iostream>
 #include <string>
-#include <fstream>
 
-using namespace std;
+    using namespace std;
 
 void lc2kcType::usage() {
     cout << "Usage: ./lc2kc [filepath]" << "\n";
@@ -18,7 +18,7 @@ void lc2kcType::runFile(char *path){
         ifstream fileStream(path);
 
         if (!fileStream.is_open()) {
-            throw "File did not open";
+            throw std::string("File did not open");
             }
 
         this->run(&fileStream);
@@ -32,7 +32,7 @@ void lc2kcType::runFile(char *path){
 }
 
 void lc2kcType::run(ifstream* fileStream) {
-    lexerType lexer(fileStream);
+    lexerType lexer(*fileStream);
 
     cout << lexer;
 }

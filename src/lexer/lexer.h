@@ -10,7 +10,7 @@ class lexerType {
     public:
     vector<token> tokens;
 
-    lexerType(ifstream *fileStream);
+    lexerType(ifstream &fileStream);
 
 
     private:

@@ -4,10 +4,16 @@
 
 #include <string>
 #include <iostream>
+#include <fstream>
 
-lexerType::lexerType(ifstream * fileRead){
-    // add scanner here
-    scannerType scanner(fileRead);
+lexerType::lexerType(ifstream &fileRead){
+    string source = "";
+    string line = "";
+    while (getline(fileRead, line)) {
+        source += line + "\n";
+    }
+    scannerType scanner(source);
+    this->tokens = scanner.scanTokens();
 };
 
 
