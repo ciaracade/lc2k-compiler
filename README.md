@@ -21,3 +21,7 @@ Development Methodology:
 - http://scheme2006.cs.uchicago.edu/11-ghuloum.pdf (supports above article)
 - https://github.com/rui314/chibicc
 - https://llvm.org/docs/tutorial/ (a tad bit overkill)
+- https://llvm.org/docs/tutorial/MyFirstLanguageFrontend/LangImpl02.html
+- https://en.wikipedia.org/wiki/Abstract_syntax_tree
+- https://norasandler.com/2017/11/29/Write-a-Compiler.html
+- https://craftinginterpreters.com/parsing-expressions.html
