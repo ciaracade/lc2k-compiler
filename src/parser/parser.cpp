@@ -10,3 +10,8 @@ parserType::parserType(std::vector<token> tokens){
 ASTType parserType::parse_statement(){
 
 };
+
+static int parserType::getNextToken(){
+    return currToken = getToken();
+}
+

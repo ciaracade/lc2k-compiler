@@ -7,17 +7,19 @@
 
 class parserType {
     public:
-
+    static int currToken;
 
         parserType(std::vector<token> tokens);
 
         ASTType parse_statement();
+
+        static int getNextToken();
+
 
     private:
         std::vector<token> tokens;
         int current = 0; 
 };
 
-Expr expression 
 
 #endif
