@@ -14,6 +14,8 @@ Development Methodology:
 5. Refactor the compiler, if necessary, making sure that none of the tests are broken due to incorrect refactoring.
 6. Enlarge the subset of the language in a very small step and repeat the cycle by writing more tests and extending the compiler to meet the newly-added requirements.
 
+7. Perhaps make a REPL interpreter for on demand feedback when messing with LC2K code
+
 
 ## Resources:
 - https://craftinginterpreters.com
